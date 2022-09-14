@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="./assets//stylesheets/homePageStyle.css" />
+    <title>The Animes World!</title>
+  </head>
+  <body>
+    <div class="loader hide">
+      <div class="loader__wrapper">
+        <lottie-player
+          src="https://assets6.lottiefiles.com/packages/lf20_tbrwjiv5.json"
+          speed="1"
+          loop
+          autoplay
+          id="loader__img"
+        ></lottie-player>
+      </div>
+    </div>
+    <header class="header">
+      <div class="container">
+        <nav class="navbar">
+          <div class="logo" id="logo">
+            <h2>Ani<span>me</span></h2>
+          </div>
+
+          <ul class="nav_list">
+            <!-- <li class="nav_list-item nav-wl">
+              <a href="#wl-section">Watchlist</a>
+            </li> -->
+            <li class="nav_list-item">
+              <div class="search__wrapper">
+                <input
+                  type="text"
+                  placeholder="Search"
+                  id="searchBar"
+                  class="search__bar"
+                />
+                <button class="search__btn" id="searchBtn">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="showcase-section">
+      <div class="container">
+        <div class="swiper">
+          <div class="swiper-wrapper" id="banners">
+            <div class="swiper-slide">
+              <img src="https://img.youtube.com/vi/bJVyIXeUznY/hqdefault.jpg" />
+              <div class="banner-title">Cowboy Bebop</div>
+            </div>
+          </div>
+
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="series-section">
+      <div class="container">
+        <div class="title__wrap">
+          <h3 class="title__tag">Top List</h3>
+          <div class="categories hide">
+            <select name="category" id="category"></select>
+          </div>
+        </div>
+        <div class="row-wrapper">
+          <div class="series__container">
+            <div class="series__list" id="series__list">
+              <!-- ITEM 1 -->
+              <div class="series__list-item">
+                <div class="series__list-item__img">
+                  <img
+                    src="https://cdn.myanimelist.net/images/anime/4/19644l.jpg"
+                  />
+                </div>
+                <div class="series__list-item__score">
+                  <p>8.2/10</p>
+                </div>
+                <div class="series__list-item__watchList">
+                  <button class="series__list-item__watchList-btn">
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+                <div class="series__list-item__title">
+                  <h3>Cowboy Bebop</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="series__watchlist-section" id="wl-section">
+            <div class="title__wrap">
+              <h3 class="title__tag">Your watch List</h3>
+            </div>
+
+            <div class="watchlists" id="watchlists">
+              <!-- ITEM 1 -->
+              <div class="watchlist-item">
+                <div class="watchlist-item__img">
+                  <img
+                    src="https://cdn.myanimelist.net/images/anime/4/19644l.jpg"
+                  />
+                </div>
+                <div class="watchlist-item__score">
+                  <p>8.2/10</p>
+                </div>
+                <div class="watchlist-item__watchList">
+                  <button
+                    class="watchlist-item__watchList-btn watchlist-remove"
+                  >
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                </div>
+                <div class="watchlist-item__title">
+                  <h3>Cowboy Bebop</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container pb-gap">
+      <div class="pgn pgn-default">
+        <div class="prev page">‹</div>
+        <div class="pages"></div>
+        <div class="next page">›</div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./assets/scripts/util.js"></script>
+    <script src="./assets/scripts/homeComponent.js"></script>
+  </body>
+</html>

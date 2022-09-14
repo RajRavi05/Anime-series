@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../assets/stylesheets/detailsPage.css" />
+    <title>Details</title>
+  </head>
+  <body>
+    <div class="loader hide">
+      <div class="loader__wrapper">
+        <lottie-player
+          src="https://assets6.lottiefiles.com/packages/lf20_tbrwjiv5.json"
+          speed="1"
+          loop
+          autoplay
+          id="loader__img"
+        ></lottie-player>
+      </div>
+    </div>
+
+    <header class="header">
+      <div class="container">
+        <nav class="navbar">
+          <div class="logo" id="logo">
+            <h2>Ani<span>me</span></h2>
+          </div>
+
+          <ul class="nav_list">
+            <li class="nav_list-item">
+              <a href="../index.html">Home</a>
+            </li>
+
+            <li class="nav_list-item hide">
+              <div class="search__wrapper">
+                <input
+                  type="text"
+                  placeholder="Search"
+                  id="searchBar"
+                  class="search__bar"
+                />
+                <button class="search__btn" id="searchBtn">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="details">
+      <div class="container" id="individualDeatils"></div>
+    </section>
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="../assets/scripts/detailsComponent.js"></script>
+  </body>
+</html>

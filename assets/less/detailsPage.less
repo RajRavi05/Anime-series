@@ -1,0 +1,76 @@
+@import "utility.less";
+@import "./colors.less";
+
+.details__container {
+  color: @white-color;
+  display: flex;
+  gap: 2rem;
+  line-height: 1.6;
+  margin-top: 2rem;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+  .details__content {
+    padding-bottom: 2rem;
+    &-heading {
+      h2 {
+        font-size: 2rem;
+      }
+      .fa-calendar-days {
+        color: @white-color;
+        margin-right: 8px;
+      }
+    }
+    &-breif {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1.2rem;
+      @media screen and (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      &-yt {
+        border: 1px solid @red-color;
+        border-radius: 100px;
+        padding: 4px;
+        text-align: center;
+        text-decoration: none;
+        color: @white-color;
+
+        &:hover {
+          background: @red-color;
+        }
+      }
+      &-hr {
+        border: 1px solid @white-color;
+        border-radius: 100px;
+        padding: 4px;
+        text-align: center;
+        .fa-clock {
+          margin-right: 8px;
+          color: @white-color;
+        }
+      }
+      &-ep {
+        border: 1px solid @white-color;
+        border-radius: 100px;
+        padding: 4px;
+        text-align: center;
+        .fa-tv {
+          margin-right: 8px;
+          color: @white-color;
+        }
+      }
+      &-scr {
+        border: 1px solid @white-color;
+        border-radius: 100px;
+        padding: 4px;
+        text-align: center;
+        .fa-star {
+          margin-right: 8px;
+          color: @white-color;
+        }
+      }
+    }
+  }
+}
