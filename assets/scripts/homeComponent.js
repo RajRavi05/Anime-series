@@ -114,7 +114,6 @@ const showBanner = (data) => {
 };
 
 const addToWatchList = (data) => {
-  console.log(data);
   let items;
   let stared = false;
 
@@ -153,7 +152,6 @@ const getWatchList = () => {
     receivedList = JSON.parse(localStorage.getItem("items"));
   }
 
-  console.log(receivedList);
   receivedList.map((item) => {
     let starBtn = document.getElementById(`star-${item.malId}`);
 
