@@ -211,3 +211,9 @@ body {
   margin-right: 8px;
   color: #fff;
 }
+.details__img-cont {
+  width: 320px;
+}
+.details__img-cont img {
+  width: 100%;
+}
