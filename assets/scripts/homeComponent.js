@@ -165,8 +165,12 @@ const getWatchList = () => {
 };
 
 const updateWatchListUI = () => {
-  const lcData = JSON.parse(localStorage.getItem("items"));
-  console.log(lcData);
+  let lcData = JSON.parse(localStorage.getItem("items"));
+
+  if (lcData == null) {
+    lcData = [];
+  }
+
   let wlHTML = "";
   if (lcData.length > 0 && lcData != null) {
     lcData.map((item, index) => {
