@@ -166,9 +166,9 @@ const getWatchList = () => {
 
 const updateWatchListUI = () => {
   const lcData = JSON.parse(localStorage.getItem("items"));
-
+  console.log(lcData);
   let wlHTML = "";
-  if (lcData.length > 0) {
+  if (lcData.length > 0 && lcData != null) {
     lcData.map((item, index) => {
       wlHTML += `
           <div class="watchlist-item" id="watch__list-item-${item.malId}" data-wmalId=${item.malId}>
