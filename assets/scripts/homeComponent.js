@@ -25,6 +25,15 @@ const getData = async () => {
 
 getData();
 
+function findIndexByKeyValue(_array, key, value) {
+  for (var i = 0; i < _array.length; i++) {
+    if (_array[i][key] == value) {
+      return i;
+    }
+  }
+  return -1;
+}
+
 const showAllDataUI = (data) => {
   let seriesList = data.data;
   allData = data.data;
@@ -66,11 +75,20 @@ const showAllDataUI = (data) => {
   const watchlistBtn = document.querySelectorAll(".watchlist-btn");
 
   watchlistBtn.forEach((item, index) => {
-    item.addEventListener("click", () => {
+    item.addEventListener("click", (e) => {
+      const indexVal = findIndexByKeyValue(
+        seriesList,
+        "mal_id",
+        item.getAttribute("data-malId")
+      );
+      console.log(allData[indexVal]);
       const addWatchlistData = {
         index: index + 1,
         star: true,
         malId: parseInt(item.getAttribute("data-malId")),
+        image: allData[indexVal].images.webp.large_image_url,
+        score: allData[indexVal].score,
+        title: allData[indexVal].title,
       };
       addToWatchList(addWatchlistData);
     });
@@ -96,6 +114,7 @@ const showBanner = (data) => {
 };
 
 const addToWatchList = (data) => {
+  console.log(data);
   let items;
   let stared = false;
 
@@ -134,39 +153,33 @@ const getWatchList = () => {
     receivedList = JSON.parse(localStorage.getItem("items"));
   }
 
+  console.log(receivedList);
   receivedList.map((item) => {
-    document
-      .getElementById(`star-${item.malId}`)
-      .classList.remove("fa-regular");
-    document.getElementById(`star-${item.malId}`).classList.add("fa-solid");
+    let starBtn = document.getElementById(`star-${item.malId}`);
+
+    if (starBtn != null) {
+      starBtn.classList.remove("fa-regular");
+      starBtn.classList.add("fa-solid");
+    }
   });
 };
 
 const updateWatchListUI = () => {
   const lcData = JSON.parse(localStorage.getItem("items"));
 
-  let newAr = [];
-  for (let i = 0; i < allData.length; i++) {
-    for (let j = 0; j < lcData.length; j++) {
-      if (allData[i].mal_id == lcData[j].malId) {
-        newAr.unshift(allData[i]);
-      }
-    }
-  }
-
   let wlHTML = "";
   if (lcData.length > 0) {
-    newAr.map((item, index) => {
+    lcData.map((item, index) => {
       wlHTML += `
-          <div class="watchlist-item" id="watch__list-item-${item.mal_id}" data-wmalId=${item.mal_id}>
+          <div class="watchlist-item" id="watch__list-item-${item.malId}" data-wmalId=${item.malId}>
             <div class="watchlist-item__img">
-                <img src="${item.images.webp.large_image_url}" />
+                <img src="${item.image}" />
             </div>
             <div class="watchlist-item__score">
                 <p>${item.score}/10</p>
             </div>
             <div class="watchlist-item__watchList">
-                <button class="watchlist-item__watchList-btn watchlist-removeBtn" data-rId=${item.mal_id}>
+                <button class="watchlist-item__watchList-btn watchlist-removeBtn" data-rId=${item.malId}>
                 <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
