@@ -103,12 +103,14 @@ const showBanner = (data) => {
   let bannerHTML = "";
 
   for (let b = 0; b < 4; b++) {
+    if(bData[b].trailer.images.large_image_url){
     bannerHTML += `
     <div class="swiper-slide">
       <img src="${bData[b].trailer.images.large_image_url}"/>
       <div class="banner-title">${bData[b].title}</div>
     </div>
   `;
+    }
   }
   document.getElementById("banners").innerHTML = bannerHTML;
 };
