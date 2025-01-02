@@ -248,8 +248,7 @@ const externalink = () => {
         console.log("do nothig");
       } else {
         window.open(
-          `/views/seriesDetails.html?id=${item.getAttribute("data-malId")}`,
-          "_blank"
+          `/views/seriesDetails.html?id=${item.getAttribute("data-malId")}`
         );
       }
     });
